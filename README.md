@@ -56,6 +56,13 @@ roslaunch turtlebot_ENPM808X roomba.launch record:=enable
 ```
 
 ### 2. Playing the recorded bag file
+ROS master has to be running. Run the following in terminal to start ROS master
+```
+cd ~catkin_ws/
+source devel/setup.bash
+roscore
+```
+In a second terminal run
 ```
 cd ~catkin_ws/
 source devel/setup.bash
