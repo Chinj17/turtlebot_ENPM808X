@@ -10,7 +10,7 @@ This program is running on a device running Ubuntu 16.04 and ROS Kinetic.
 * To install ROS kinetic, use this [link](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 * If you don't have catkin installed use this [link](http://wiki.ros.org/catkin)
 
-In addition to the above dependencies, you need to have the turtlebot_gazebo simulation installed. It can be installed typing the following lines in the terminal:
+In addition to the above dependencies, you need to have the turtlebot_gazebo simulation installed. It can be installed by typing the following lines in terminal:
 ```
 sudo apt-get install ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-rviz-launchers
 ```
@@ -43,6 +43,32 @@ After following the above mentioned steps and successfully creating catkin works
 cd ~/catkin_ws/
 source devel/setup.bash
 roslaunch turtlebot_ENPM808X roomba.launch
+```
+
+# Bag Files
+Recording of the ros bag file is disabled by default. If you want to record a bag file run the following in terminal:
+
+### 1. Recording the bag file
+```
+cd ~catkin_ws/
+source devel/setup.bash
+roslaunch turtlebot_ENPM808X roomba.launch record:=enable
+```
+
+### 2. Playing the recorded bag file
+```
+cd ~catkin_ws/
+source devel/setup.bash
+cd <path to results directory>
+rosbag play record.bag
+```
+
+### 3. Inspecting the bag file
+```
+cd ~catkin_ws/
+source devel/setup.bash
+cd <path to results directory>
+rosbag info record.bag
 ```
 
 # Error checks
