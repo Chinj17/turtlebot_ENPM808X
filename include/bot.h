@@ -11,8 +11,8 @@
  * @date 11-16-2019
  */
 
-#ifndef _HOME_CHINMAY17_CATKIN_WS_SRC_TURTLEBOT_ENPM808X_INCLUDE_BOT_H_
-#define _HOME_CHINMAY17_CATKIN_WS_SRC_TURTLEBOT_ENPM808X_INCLUDE_BOT_H_
+#ifndef INCLUDE_BOT_H_
+#define INCLUDE_BOT_H_
 
 #include <ros/ros.h>
 #include <sensor_msgs/LaserScan.h>
@@ -44,4 +44,4 @@ class roomba {
   bool obstacle();
 };
 
-#endif  // _HOME_CHINMAY17_CATKIN_WS_SRC_TURTLEBOT_ENPM808X_INCLUDE_BOT_H_
+#endif  // INCLUDE_BOT_H_
