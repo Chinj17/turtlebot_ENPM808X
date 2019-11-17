@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/Chinj17/turtlebot_ENPM808X.svg?branch=Week12_HW)](https://travis-ci.org/Chinj17/turtlebot_ENPM808X)
 
 # Overview
-This program is an example of a basic implementation of walker example algorithm much like the Roomba robot. The robot being used is a turtlebot. The turtlebot moves forward till it detects an obstacle in a predefined range. When it detects an obstacle, it rotates itself till the obstacle is out of range. There is an added functionality of recording a bag file which records every topic except the /camera/* topic. This bag file can be found in the results section.
+This project is a basic implementation of walker algorithm much like the one used in Roomba robot. The robot being used is a turtlebot. The turtlebot moves forward till it detects an obstacle in a predefined range. When it detects an obstacle, it rotates itself till the obstacle is out of range. There is an added functionality of recording a bag file which records every topic except the /camera/* topic. This bag file can be found in the results section.
 
 # Software
 This program is running on a device running Ubuntu 16.04 and ROS Kinetic.
