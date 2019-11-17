@@ -11,8 +11,8 @@
  * @date 11-16-2019
  */
 
-#ifndef INCLUDE_BOT_HPP_
-#define INCLUDE_BOT_HPP_
+#ifndef _HOME_CHINMAY17_CATKIN_WS_SRC_TURTLEBOT_ENPM808X_INCLUDE_BOT_H_
+#define _HOME_CHINMAY17_CATKIN_WS_SRC_TURTLEBOT_ENPM808X_INCLUDE_BOT_H_
 
 #include <ros/ros.h>
 #include <sensor_msgs/LaserScan.h>
@@ -22,19 +22,18 @@
  *        LaserScan data
  */
 class roomba {
-private:
-
+ private:
   // private member variable to store the obstacle state.
-  bool obs;
+  static bool obs;
 
-public:
+ public:
 /**
  * @brief This is the first method of the class. It is a function
  *        for subscribing to the laser scan data.
  *
  * @param Message published by the LaserScan node of turtlebot as input.
  */
- void readDistance(const sensor_msgs::LaserScan::ConstPtr&);
+  void readDistance(const sensor_msgs::LaserScan::ConstPtr&);
 
 /**
  * @brief This is the second method of the class. It is a function
@@ -42,8 +41,7 @@ public:
  *
  * @return Returns if an obstacle is detected or not.
  */
- bool obstacle();
-
+  bool obstacle();
 };
 
-#endif /* INCLUDE_BOT_HPP_ */
+#endif  // _HOME_CHINMAY17_CATKIN_WS_SRC_TURTLEBOT_ENPM808X_INCLUDE_BOT_H_
