@@ -60,14 +60,30 @@ int main(int argc, char **argv) {
    * than we can send them, the number here specifies how many messages to
    * buffer up before throwing some away.
    */
+  auto vel = n.advertise<geometry_msgs::Twist>
+                                     ("/mobile_base/commands/velocity", 1000);
+ /**
+  * The subscribe() call is how you tell ROS that you want to receive messages
+  * on a given topic.  This invokes a call to the ROS
+  * master node, which keeps a registry of who is publishing and who
+  * is subscribing.  Messages are passed to a callback function, here
+  * called chatterCallback.  subscribe() returns a Subscriber object that you
+  * must hold on to until you want to unsubscribe.  When all copies of the Subscriber
+  * object go out of scope, this callback will automatically be unsubscribed from
+  * this topic.
+  *
+  * The second parameter to the subscribe() function is the size of the message
+  * queue.  If messages are arriving faster than they are being processed, this
+  * is the number of messages that will be buffered up before beginning to throw
+  * away the oldest ones.
+  */
   auto laserSensor = n.subscribe<sensor_msgs::LaserScan>("/scan", 50,
                                              &roomba::readDistance, &walker);
 
-  auto vel = n.advertise<geometry_msgs::Twist>
-                                    ("/mobile_base/commands/velocity", 1000);
-
   ros::Rate loop_rate(10);
 
+  // Using msg to get twist messages which have the linear
+  // and angular velocity
   geometry_msgs::Twist msg;
 
   // Adding an intial angle because the orientation of turtlebot was such

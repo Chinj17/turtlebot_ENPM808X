@@ -18,7 +18,7 @@
 #include <sensor_msgs/LaserScan.h>
 
 /**
- * @brief Waler class for the turtlebot robot which takes in the
+ * @brief Roomba class for the turtlebot robot which takes in the
  *        LaserScan data
  */
 class roomba {
