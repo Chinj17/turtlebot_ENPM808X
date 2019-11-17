@@ -49,7 +49,7 @@ roslaunch turtlebot_ENPM808X roomba.launch
 **cppcheck**
 ```
 cd <path to directory>
-cppcheck --std=c++11 $(find . -name \*.cpp -or -name \*.srv | grep -vE -e "^./build/" -e "^./results/") &> cppcheck.txt
+cppcheck --std=c++11 $(find . -name \*.cpp -or -name \*.h | grep -vE -e "^./build/" -e "^./results/") &> cppcheck.txt
 ```
 **Google C++ standards**
 ```
