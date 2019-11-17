@@ -1,32 +1,17 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(beginner_tutorials)
+project(turtlebot_ENPM808X)
 
+## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
 
-## Find catkin and any catkin packages
-find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs genmsg tf)
+## Find catkin macros and libraries
+find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs geometry_msgs move_base_msgs sensor_msgs)
 
-## Declare ROS messages and services
-add_service_files(FILES changeString.srv)
+## Generate added messages and services with any dependencies listed here
+# generate_messages(DEPENDENCIES std_msgs)
 
-generate_messages(DEPENDENCIES std_msgs)
-
-## Declare a catkin package
-catkin_package(CATKIN_DEPENDS message_runtime)
-
-## Build talker and listener
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(talker src/talker.cpp)
-target_link_libraries(talker ${catkin_LIBRARIES})
-add_dependencies(talker beginner_tutorials_generate_messages_cpp)
-
-add_executable(listener src/listener.cpp)
-target_link_libraries(listener ${catkin_LIBRARIES})
-add_dependencies(listener beginner_tutorials_generate_messages_cpp)
-
-if(CATKIN_ENABLE_TESTING)
-  find_package(rostest REQUIRED)
-  add_rostest_gtest(beginnerTutorialsTest test/beginnerTutorialsTest.test test/main.cpp test/talkerTest.cpp)
-  target_link_libraries(beginnerTutorialsTest ${catkin_LIBRARIES})
-endif()
+add_executable(roomba src/main.cpp src/bot.cpp)
+# add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(roomba ${catkin_LIBRARIES})
