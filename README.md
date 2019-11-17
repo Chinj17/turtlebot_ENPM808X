@@ -76,10 +76,10 @@ rosbag info record.bag
 **cppcheck**
 ```
 cd <path to directory>
-cppcheck --std=c++11 $(find . -name \*.cpp -or -name \*.h | grep -vE -e "^./build/" -e "^./results/") &> cppcheck.txt
+cppcheck --std=c++11 $(find . -name \*.cpp -or -name \*.h | grep -vE -e "^./build/" -e "^./results/") &> results/cppcheck.txt
 ```
 **Google C++ standards**
 ```
 cd <path to directory>
-cpplint $(find . -name \*.cpp | grep -vE -e "^./build/" -e "^./results") &> cpplint.txt
+cpplint $(find . -name \*.cpp -or -name \*.h | grep -vE -e "^./launch/" -e "^./results/")  &> results/cpplint.txt
 ```
