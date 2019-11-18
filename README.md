@@ -1,6 +1,6 @@
 # Turtlebot_ENPM808X
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![Build Status](https://travis-ci.org/Chinj17/turtlebot_ENPM808X.svg?branch=Week12_HW)](https://travis-ci.org/Chinj17/turtlebot_ENPM808X)
+[![Build Status](https://travis-ci.org/Chinj17/turtlebot_ENPM808X.svg?branch=master)](https://travis-ci.org/Chinj17/turtlebot_ENPM808X)
 
 # Overview
 This project is a basic implementation of walker algorithm much like the one used in Roomba robot. The robot being used is a turtlebot. The turtlebot moves forward till it detects an obstacle in a predefined range. When it detects an obstacle, it rotates itself till the obstacle is out of range. There is an added functionality of recording a bag file which records every topic except the /camera/* topic. This bag file can be found in the results section.
